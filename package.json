@@ -1,0 +1,35 @@
+{
+  "name": "yerba-bot",
+  "version": "1.0.0",
+  "description": "A bot that reposts r/yerbamate to twitter",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facuerrobidart/yerba-bot.git"
+  },
+  "keywords": [
+    "bot",
+    "twitter",
+    "reddit"
+  ],
+  "author": "Facundo Errobidart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facuerrobidart/yerba-bot/issues"
+  },
+  "homepage": "https://github.com/facuerrobidart/yerba-bot#readme",
+  "devDependencies": {
+    "@types/node": "14.6.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.16.4",
+    "reddit-snooper": "^1.0.1"
+  }
+}
