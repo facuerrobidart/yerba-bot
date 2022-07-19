@@ -28,6 +28,7 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
+    "@ipmanlk/reddit-simple": "^2.2.1",
     "dotenv": "^16.0.1",
     "express": "^4.16.4",
     "reddit-snooper": "^1.0.1"
