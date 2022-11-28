@@ -15,14 +15,17 @@ var snooper = new Snooper({
 });
 
 
-app.get("/random", (req, res) => {
-    var response;
-    RedditSimple.RandomPost("yerbamate").then(
-        res => {
-            console.log(res[0]);
-        response = res[0];
-        res.send({data: response});
-    });
+app.get("/random", async (req, res) => {
+    let results = await RedditSimple.RandomPost("yerbamate");
+    
+    let i = 0;
+
+    while (results[i].is_video == false) {
+        i++
+    }
+    console.log(results[i]);
+
+    res.send({data: results[i]});
 });
 
 app.get("/twitter/connect", (req, res) => {
