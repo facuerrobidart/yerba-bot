@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 import Snooper from 'reddit-snooper';
+import express from 'express';
 import { RedditSimple } from '@ipmanlk/reddit-simple';
+
+const app = express();
 
 dotenv.config();
 
@@ -12,4 +15,15 @@ var snooper = new Snooper({
 });
 
 
-RedditSimple.RandomPost("yerbamate").then(res => console.log(res[0]));
+app.get("/random", (req, res) => {
+    RedditSimple.RandomPost("yerbamate").then(res => console.log(res[0]));
+});
+
+
+app.listen(3000, () => {
+    console.log("Running on localhost:3000")
+});
+
+
+
+
