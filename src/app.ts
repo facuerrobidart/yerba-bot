@@ -16,8 +16,18 @@ var snooper = new Snooper({
 
 
 app.get("/random", (req, res) => {
-    RedditSimple.RandomPost("yerbamate").then(res => console.log(res[0]));
+    var response;
+    RedditSimple.RandomPost("yerbamate").then(
+        res => {
+            console.log(res[0]);
+        response = res[0];
+        res.send({data: response});
+    });
 });
+
+app.get("/twitter/connect", (req, res) => {
+    console.log("TODO");
+})
 
 
 app.listen(3000, () => {
