@@ -8,6 +8,7 @@ const reddit_snooper_1 = __importDefault(require("reddit-snooper"));
 const express_1 = __importDefault(require("express"));
 const reddit_simple_1 = require("@ipmanlk/reddit-simple");
 const app = express_1.default();
+app.set('port', process.env.PORT || 3000);
 dotenv_1.default.config();
 var snooper = new reddit_snooper_1.default({
     app_id: process.env.REDDIT_CLIENT_ID,
@@ -27,7 +28,7 @@ app.get("/random", async (req, res) => {
 app.get("/twitter/connect", (req, res) => {
     console.log("TODO");
 });
-app.listen(3000, () => {
-    console.log("Running on localhost:3000");
+app.listen(app.get('port'), () => {
+    console.log("Running on port " + app.get('port'));
 });
 //# sourceMappingURL=app.js.map

@@ -5,6 +5,8 @@ import { RedditSimple } from '@ipmanlk/reddit-simple';
 
 const app = express();
 
+app.set('port', process.env.PORT || 3000);
+
 dotenv.config();
 
 var snooper = new Snooper({
@@ -33,8 +35,8 @@ app.get("/twitter/connect", (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("Running on localhost:3000")
+app.listen(app.get('port'), () => {
+    console.log("Running on port " + app.get('port'))
 });
 
 
